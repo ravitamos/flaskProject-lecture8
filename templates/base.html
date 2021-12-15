@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/cvcss.css">
+    <link rel="script" href="/static/js/cvjs.js">
+</head>
+<body>
+{% include 'header.html' %}
+<hr>
+{% block tohen %}{% endblock %}
+<h5> massage from base </h5>
+<hr>
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{%  extends 'base.html' %}
+
+{% block title %}about{% endblock %}
+
+
+{%  block tohen %}
+    {{  super() }}
+        <h1> about me..</h1>
+    <h2>name: {{ profile.name | default('unknown', true) |upper()}} {{ profile.second | upper() }}</h2>
+    <h2> university: {{ university | default('unspecified', true)}}</h2>
+   <h2> degree: </h2>
+    <ol>
+        {% for mov in fav_movies %}
+            <li>{{mov }}</li>
+        {%  endfor%}
+    </ol>
+<h2>hobbies</h2>
+    <ul>
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+        {%  endfor%}
+    </ul>
+
+    {% if profile %}
+        <h3> <a href="/index">back to cv </a></h3>
+    {% else %}
+        <h3> please log in to the website..</h3>
+    {% endif %}
+{% endblock %}
+
+

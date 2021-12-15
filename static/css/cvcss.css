@@ -1,0 +1,79 @@
+body{
+    background-color: lightsteelblue;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.headerTitle{
+    font-weight: bold;
+    font-size:50px ;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.Title{
+    color: navy;
+    font-weight: bold;
+    font-size:20px ;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+#deagree{
+        color: navy;
+    text-align: center;
+}
+
+#GridContainer {
+    display: grid;
+    grid-template-areas:
+     'header header header right'
+     'left left left right'
+     'left left left right'
+     'main main main right'
+}
+
+#MyCVHeader{
+    display: block;
+    grid-area: header;
+    width: 100%;
+    height: 30vh;
+}
+
+
+#additional_detail{
+    grid-area: right;
+    width: 100%;
+    height: 196vh;
+    border-left:2px solid rgb(0, 0, 0) ;
+}
+
+
+#CVtext{
+    grid-area: left;
+    width: 100%;
+    height: 10vh;
+}
+
+
+#CVform{
+    grid-area: main;
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    #GridContainer {
+     display: grid;
+     grid-template-areas:
+      'header'
+      'right'
+      'left'
+      'main'
+    }
+
+#rightSideOnCV{
+        grid-area: right;
+        width: 100%;
+        height: 80vh;
+        border-left:2px solid white ;
+}

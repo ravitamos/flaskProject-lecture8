@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+CV
+{% endblock%}
+
+{% block tohen %}
+
+        <div id = "GridContainer">
+            <div id= "MyCVHeader">
+              <h1 class= "headerTitle"> Ravit Amos CV </h1>
+              <h2 class= "Title" id="deagree">short<br>
+                    Highly motivated Industrial engineering student (information systems program).
+                     looking for information systems position, would like to use data-analysis and software skills.
+                    Looking for a part-time job </h2><br><br><br>
+            </div>
+            <div id= "additional_detail">
+                <div>
+                    <img src ="/static/img/ravirCV.JPG">
+                </div>
+                <div>
+                    <p>
+                        <h2 class= "Title"> ABOUT ME </h2>
+                        Beer-Sheva, Israel <br>
+                        ravittt32@gmail.com <br>
+                        052-4214303
+                    </p>
+                    <p>
+                        <h2 class= "Title"> Technological Skills  </h2>
+                        JAVA <br>
+                        Python <br>
+                        R <br>
+                        Exel
+                    </p>
+                    <p>
+                        <h2 class= "Title"> Languages </h2>
+                        Hebrew Native<br>
+                        English High level
+                    </p>
+                </div>
+            </div>
+
+            <div id= "CVtext">
+                <p>
+                    <h2 class= "Title" id="deagree" ><br> links </h2>
+                    <a href="https://www.linkedin.com/in/ravit-amos/"> MY LinkdIn Profile</a>
+                </p>
+            </div>
+            <div id= "CVform">
+                <h2 class= "Title" id="deagree" > Contact </h2>
+                <form>
+                    <label for = "FnameC"> Full Name </label>
+                    <input type="text" id="FnameC" name="FnameC"><br><br>
+                    <label for = "JobTitle"> Work Place </label>
+                    <input type="text" id="JobTitle" name="workplaceC"><br><br>
+                    <label for = "EmailC"> Email </label>
+                    <input type="email" id="EmailC" name="EmailC"><br><br>
+                    <label for = "PhoneC"> Phone </label>
+                    <input type="text" id="PhoneC" name="PhoneC"><br><br>
+                    <label for = "CommentC"> Comment </label><br><br>
+
+                    <textarea name="CommentC" id="CommentC" cols="30" rows="10"></textarea><br><br>
+                    <button id="submit" onclick="validEmail('EmailC','note1')" > Send </button>
+                </form>
+
+            </div>
+            <div id= "linksOnCV">
+
+            </div>
+        </div>
+
+
+
+{% endblock %}
