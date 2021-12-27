@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+
+{% block title %}about{% endblock %}
+
+{%  block tohen %}
+    {{ super() }}
+    <h1> welcome to catalog page</h1>
+    <form action="/catalog" method="get">
+        product : <input name="product" type="text" >
+        size:<input name="size"  type="text">
+    <input type="submit">
+    </form>
+    {% if p_name %}
+        <h2> you picked product {{ users }}</h2>
+    {%  endif %}
+    {% if p_size %}
+        <h2> you picked size {{ p_size }}</h2>
+    {%  endif %}
+
+
+{% endblock %}
+
+

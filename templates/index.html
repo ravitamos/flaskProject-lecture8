@@ -6,6 +6,8 @@ CV
 {% endblock%}
 
 {% block tohen %}
+    {% set page_name= 'home'%}
+    <h1> welcome , {{ session.username | default('guest',true) }}<h1/>
 
         <div id = "GridContainer">
             <div id= "MyCVHeader">
@@ -69,7 +71,4 @@ CV
 
             </div>
         </div>
-
-
-
 {% endblock %}

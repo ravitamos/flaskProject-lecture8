@@ -5,4 +5,3 @@ function validEmail(EmailC, note1){
         document.getElementById(note1).innerHTML= inpObj.validationMwssage;
     }
 }
-

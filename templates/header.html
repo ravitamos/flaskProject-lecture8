@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
     <header>
         <a href="/assignment8" > assignment8 </a>
+        <a href="/assignment9" > assignment9 </a>
+        <a href="/catalog" > catalog </a>
+        {%  if session.username %}
+            <a href="logout"> log out</a>
+        {% else %}
+            <a href="/login" >log in</a>
+        {% endif %}
+    {%  if session.username  %}
+    <h2> Hello, {{ session.username }} </h2>
+    {% else %}
+        <h2> Hello guest </h2>
+    {% endif %}
+
     </header>
 </body>
 </html>

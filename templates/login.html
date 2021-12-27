@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+
+{% block title %}login{% endblock %}
+
+{%  block tohen %}
+    {{ super() }}
+    <h1> please login! </h1>
+
+    {% if username %}
+        <h3> welcome back {{ username }}</h3>
+
+    {% else %}
+
+        <form action="/login" method="POST">
+        Username : <input name="username" type="text" >
+        Password:<input name="password"  type="text">
+        <input type="submit">
+        </form>
+     {% endif %}
+{% endblock %}
+
+app.route('/login', methods=['GET','POST'])
+def login_func():my
+    if request.method == 'GET':
+        return render_template('login.html')
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Db
+        found = True
+        if found:
+            session['username'] = username
+            return redirect(url_for('home_func'))
+        else:
+            return render_template('login.html')

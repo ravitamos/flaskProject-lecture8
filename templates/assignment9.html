@@ -1,0 +1,41 @@
+{%  extends 'base.html' %}
+
+{% block title %}assignment9{% endblock %}
+
+{%  block tohen %}
+    <h1> Search form</h1>
+    <form action="/assignment9" method="get">
+        User : <input name="user" type="text" >
+    <input type="submit" value="search">
+    </form>
+    {% if p_user=="" %}
+        <h2> this is all user details</h2>
+        {% for i in dic_users %}
+            <h3> name: {{ dic_users.get(i).get('name') }},{{ " " }} email: {{ dic_users.get(i).get('email') }}<br> </h3>
+        {% endfor %}
+    {% endif %}
+    {% if p_user %}
+            {% if p_user in dic_users %}
+                 <h2> your user's details is {{ dic_users.get(p_user) }}</h2>
+            {% else %}
+                <h2>this user not find</h2>
+            {% endif %}
+    {%  endif %}<br>
+
+    --------
+    {% if session.username %}
+        <h2> Hello, {{ session.username }} </h2>
+        <form action="/assignment9" method="POST">
+            <input name="logOutButton"  type="submit" value="log out">
+        </form>
+    {% else %}
+         <form action="/assignment9" method="POST">
+            <h2> Please Log In</h2>
+            Username : <input name="username" type="text" >
+            Password:<input name="password"  type="text">
+            <input type="submit" value="Register">
+        </form>
+    {% endif %}
+
+{% endblock %}
+
