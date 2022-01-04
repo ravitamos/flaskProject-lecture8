@@ -13,7 +13,7 @@
         <input type="text" name="name" placeholder="Name">
         <input type="email" name="email" placeholder="Email">
         <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Insert"  >
+        <input type="submit" value="Insert" onclick="func()" >
     </form>
     <hr>
     <h2> User List: </h2>
@@ -22,7 +22,7 @@
         <li>
            <form action="/Delete_user", method="post" style="display: inline">
                <input type="hidden" name="id" value="{{ user.id }}">
-               <input type="submit" value="delete" >
+               <input type="submit" value="delete" onclick="func()" >
            </form> {{  user.name }}, email:{{ user.email }}</li>
     {% endfor %}
     </ul>
@@ -33,7 +33,7 @@
         <input name="name" type="name" placeholder="your name">
         <input name="email" type="email" placeholder="email">
 
-        <input type="submit" >
+        <input type="submit" onclick="func()">
     </form>
 
 
