@@ -2,13 +2,21 @@ from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 from flask import session
+import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '123'
 
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="root"
+)
+
+
+
 users = {'user1': {'name': 'yossi', 'email': 'yo@gmail.com'},
-         'user2': {'name': 'ravit', 'email': 'ra@gmail.com'},
-         'user3': {'name': 'roi', 'email': 'ro@gmail.com'},
+         'user2': {'name': 'ravit', 'email': 'ra@gmail.com'},         'user3': {'name': 'roi', 'email': 'ro@gmail.com'},
          'user4': {'name': 'lir', 'email': 'li@gmail.com'},
          'user5': {'name': 'shir', 'email': 'sh@gmail.com'}}
 username=''
@@ -57,8 +65,6 @@ def catalog_func():
 
 @app.route('/users')
 def users_func():
-    query='select * from users;'
-    user = interact_db(query=query, query_type='fetch')
     return render_template('users.html')
 
 @app.route('/assignment9', methods=['GET','POST'])
@@ -83,7 +89,9 @@ def ass9_func():
                 return render_template('assignment9.html', username=username)
     return render_template('assignment9.html')
 
-
+## assignment10
+from pages.assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
 
 if __name__ == '__main__':
     app.run(debug=True)

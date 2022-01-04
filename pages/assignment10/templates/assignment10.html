@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}assignment10{% endblock %}
+
+{% block tohen %}
+    <h1>assignment10 Page </h1>
+            <div>
+                <img src="/assignment10/media/img/flask-favicon.png" >
+            </div>
+    <form action="/Insert_user" method="POST">
+        <h1>insertion form </h1>
+
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Insert"  >
+    </form>
+    <hr>
+    <h2> User List: </h2>
+    <ul>
+    {% for user in users %}
+        <li>
+           <form action="/Delete_user", method="post" style="display: inline">
+               <input type="hidden" name="id" value="{{ user.id }}">
+               <input type="submit" value="delete" >
+           </form> {{  user.name }}, email:{{ user.email }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2> update user:</h2>
+    <form action="/Update_users" method="POST">
+        <input name="id" type="text" placeholder="user ID:">
+        <input name="name" type="name" placeholder="your name">
+        <input name="email" type="email" placeholder="email">
+
+        <input type="submit" >
+    </form>
+
+
+{% endblock %}
+{% block page_body_js %}
+    <script src="{{ url_for('assignment10.static', filename='js/assignment10.js') }}"></script>
+{% endblock %}

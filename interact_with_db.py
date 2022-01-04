@@ -8,7 +8,7 @@ def interact_db(query, query_type: str):
     connection = mysql.connector.connect(host='localhost',
                                          user='root',
                                          passwd='root',
-                                         database='myappnewdb')
+                                         database='myappdatabase')
     cursor = connection.cursor(named_tuple=True)
     cursor.execute(query)
     #
