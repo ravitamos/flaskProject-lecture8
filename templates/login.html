@@ -19,17 +19,12 @@
      {% endif %}
 {% endblock %}
 
-app.route('/login', methods=['GET','POST'])
-def login_func():my
-    if request.method == 'GET':
-        return render_template('login.html')
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+
+           session['username'] = username
+            return redirect(url_for('app.route('/login', methods=['GET','POST'])
+def login_ request.form['password']
         # Db
         found = True
-        if found:
-            session['username'] = username
-            return redirect(url_for('home_func'))
+        if found:home_func'))
         else:
             return render_template('login.html')
