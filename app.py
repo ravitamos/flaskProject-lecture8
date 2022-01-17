@@ -177,9 +177,9 @@ def req_backend_async_func():
     return render_template('req_backend.html', pockemons=pockemons)
 
 
-@app.route('/db_users', defaults={'user_id': -1, 'order': 'my order'})
-@app.route('/db_users/<int:user_id>/<order>')
-def get_users_func(user_id, order):
+@app.route('/assignment12/restapi_users', defaults={'user_id': 3})
+@app.route('/assignment12/restapi_users/<int:user_id>')
+def get_users_func(user_id):
     query = 'select * from users where id=%s;' % user_id
     users = interact_db(query=query, query_type='fetch')
     if len(users) == 0:
@@ -193,7 +193,6 @@ def get_users_func(user_id, order):
             f'id': users[0].id,
             'name': users[0].name,
             'email': users[0].email,
-            'orders': order
         }
     return jsonify(return_dict)
 
